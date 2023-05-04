@@ -37,3 +37,4 @@ C:\Users\Admin\Documents\Cours\2022-23\Sudoku\App\Sudoku\bin\Debug\System.Numeri
 C:\Users\Admin\Documents\Cours\2022-23\Sudoku\App\Sudoku\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\Admin\Documents\Cours\2022-23\Sudoku\App\Sudoku\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Users\Admin\Documents\Cours\2022-23\Sudoku\App\Sudoku\obj\Debug\Sudoku.csproj.CopyComplete
+C:\Users\Admin\Documents\Cours\2022-23\Sudoku\App\Sudoku\obj\Debug\Sudoku.FrmSignIn.resources

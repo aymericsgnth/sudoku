@@ -20,6 +20,7 @@ namespace Sudoku
     public partial class FrmHome : Form
     {
         FrmSignUpOrUpdateData frmSignUpOrUpdateData = null;
+        FrmSignIn FrmSignIn = null;
         public FrmHome()
         {
             InitializeComponent();
@@ -37,10 +38,13 @@ namespace Sudoku
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void OnClickOnbtnSignIn(object sender, EventArgs e)
         {
-            throw new System.NotImplementedException();
+            FrmSignIn = new FrmSignIn();
+            FrmSignIn.ShowDialog();
         }
+
+        
     }
 
 }

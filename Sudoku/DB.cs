@@ -18,12 +18,12 @@ namespace Sudoku
             ds = new DataSet();
         }
 
-        public List<object[]> Query(string query, Dictionary<string, string> sqlParams )
+        public List<Dictionary<string, string>> Query(string query, Dictionary<string, string> sqlParams )
         {
             MySqlConnection mySqlConnection = new MySqlConnection(ConfigurationManager.ConnectionStrings["ConString"].ToString());
             MySqlCommand mySqlCommand = new MySqlCommand(query, mySqlConnection);
             mySqlConnection.Open();
-            List<object[]> output = new List<object[]>();
+            List<Dictionary<string, string>> output = new List<Dictionary<string, string>>();
             foreach (KeyValuePair<string, string > placeholderWithValue in sqlParams)
             {
                 mySqlCommand.Parameters.AddWithValue(placeholderWithValue.Key, placeholderWithValue.Value);
@@ -38,9 +38,14 @@ namespace Sudoku
 
                         while (reader.Read())
                         {
-                            object[] current =  new object[reader.FieldCount];
-                            reader.GetValues(current);
-                            output.Add(current);
+                            object[] currentValues =  new object[reader.FieldCount];
+                            reader.GetValues(currentValues);
+                            Dictionary<string, string> currentList = new Dictionary<string, string>();
+                            for (int i = 0; i < reader.FieldCount; i++)
+                            {
+                                currentList.Add(reader.GetName(i), currentValues[i].ToString());
+                            }
+                            output.Add(currentList);
                         }
                     }
                 }

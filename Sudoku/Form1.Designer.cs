@@ -30,10 +30,8 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.btnSignIn = new System.Windows.Forms.Button();
             this.btnSignUpOrUpdateData = new System.Windows.Forms.Button();
-            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -42,28 +40,18 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(24, 23);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(183, 37);
+            this.label1.Size = new System.Drawing.Size(168, 37);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Bienvenue !";
+            this.label1.Text = "Welcome !";
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Location = new System.Drawing.Point(31, 64);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(757, 282);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(431, 130);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.groupBox1.Text = "Grids";
             // 
             // btnSignIn
             // 
@@ -71,8 +59,9 @@
             this.btnSignIn.Name = "btnSignIn";
             this.btnSignIn.Size = new System.Drawing.Size(98, 23);
             this.btnSignIn.TabIndex = 2;
-            this.btnSignIn.Text = "S\'authentifier";
+            this.btnSignIn.Text = "Sign in";
             this.btnSignIn.UseVisualStyleBackColor = true;
+            this.btnSignIn.Click += new System.EventHandler(this.OnClickOnbtnSignIn);
             // 
             // btnSignUpOrUpdateData
             // 
@@ -80,7 +69,7 @@
             this.btnSignUpOrUpdateData.Name = "btnSignUpOrUpdateData";
             this.btnSignUpOrUpdateData.Size = new System.Drawing.Size(98, 23);
             this.btnSignUpOrUpdateData.TabIndex = 3;
-            this.btnSignUpOrUpdateData.Text = "S\'inscrire";
+            this.btnSignUpOrUpdateData.Text = "Sign up";
             this.btnSignUpOrUpdateData.UseVisualStyleBackColor = true;
             this.btnSignUpOrUpdateData.Click += new System.EventHandler(this.OnClickOnbtnSignUpOrUpdateData);
             // 
@@ -97,12 +86,10 @@
             this.MaximizeBox = false;
             this.Name = "FrmHome";
             this.Text = "Accueil";
-            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
-        }
 
-        private System.Windows.Forms.Button button1;
+        }
 
         #endregion
 
