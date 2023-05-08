@@ -28,3 +28,5 @@ Aujourd'hui je vais vérifier que tout ce que j'ai fait jusqu'a aujourd'hui marc
 - vue pour créer une grille
 - documentation(si j'ai compris comment je dois faire)
 
+### Objectis réalisés
+J'ai eu pas mal de bug ce qui a fait que je suis un petit en retard. je suis toutefois très content de ma journée et je suis prêt à recommencer. 
