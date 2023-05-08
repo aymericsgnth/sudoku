@@ -18,4 +18,13 @@ Je compte commencer le projet tout en faisant de la documentation et des tests
 ### Objectifs réalisées
 Tous, je suis content
 ### Difficultées rencontrées
-L'extension pour faire directement du SQL en C# n'est pas vraiment à mon gout(pour ne pas dire nulle) 
+L'extension pour faire directement du SQL en C# n'est pas vraiment à mon gout(pour ne pas dire nulle). C'est impossible de récupérer toutes les raw sans trixer commme pas possible avec une quantité de boucles incroyable
+
+## [08.05.2023]
+Aujourd'hui je vais vérifier que tout ce que j'ai fait jusqu'a aujourd'hui marche bien. Après coup je m'occuperai de la vue pour créer une grille
+### Objectifs
+- tests de l'application
+- amélioration de qualité du code
+- vue pour créer une grille
+- documentation(si j'ai compris comment je dois faire)
+
