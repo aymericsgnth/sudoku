@@ -33,3 +33,8 @@ J'ai eu pas mal de bug ce qui a fait que je suis un petit en retard. je suis tou
 
 ## [10.05.2023]
 Aujourd'hui je compte finir la vue pour créer une grille et commencer la vue pour jouer si j'ai le temps. 
+
+### Objectifs réalisés
+J'ai bien avancé, toutefois j'ai encore rencontré un problème avec cette charmante connection Mysql. Je n'ai donc malheureuseument pas pu faire l'appel à la base pour l'insertion. J'ai également fait mon Powerpoint pour présenter mon stage, ce qui m'a pris une partie considérable de ma journée. 
+
+Je suis content de ma productivité et prêt à recommencer demain. 
