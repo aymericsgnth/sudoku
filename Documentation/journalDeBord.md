@@ -30,3 +30,6 @@ Aujourd'hui je vais vérifier que tout ce que j'ai fait jusqu'a aujourd'hui marc
 
 ### Objectis réalisés
 J'ai eu pas mal de bug ce qui a fait que je suis un petit en retard. je suis toutefois très content de ma journée et je suis prêt à recommencer. 
+
+## [10.05.2023]
+Aujourd'hui je compte finir la vue pour créer une grille et commencer la vue pour jouer si j'ai le temps. 
