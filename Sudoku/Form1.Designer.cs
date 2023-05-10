@@ -32,6 +32,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnSignIn = new System.Windows.Forms.Button();
             this.btnSignUpOrUpdateData = new System.Windows.Forms.Button();
+            this.btnCreateGrid = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -55,7 +56,7 @@
             // 
             // btnSignIn
             // 
-            this.btnSignIn.Location = new System.Drawing.Point(386, 35);
+            this.btnSignIn.Location = new System.Drawing.Point(309, 37);
             this.btnSignIn.Name = "btnSignIn";
             this.btnSignIn.Size = new System.Drawing.Size(98, 23);
             this.btnSignIn.TabIndex = 2;
@@ -65,7 +66,7 @@
             // 
             // btnSignUpOrUpdateData
             // 
-            this.btnSignUpOrUpdateData.Location = new System.Drawing.Point(598, 35);
+            this.btnSignUpOrUpdateData.Location = new System.Drawing.Point(460, 37);
             this.btnSignUpOrUpdateData.Name = "btnSignUpOrUpdateData";
             this.btnSignUpOrUpdateData.Size = new System.Drawing.Size(98, 23);
             this.btnSignUpOrUpdateData.TabIndex = 3;
@@ -73,11 +74,22 @@
             this.btnSignUpOrUpdateData.UseVisualStyleBackColor = true;
             this.btnSignUpOrUpdateData.Click += new System.EventHandler(this.OnClickOnbtnSignUpOrUpdateData);
             // 
+            // btnCreateGrid
+            // 
+            this.btnCreateGrid.Location = new System.Drawing.Point(616, 37);
+            this.btnCreateGrid.Name = "btnCreateGrid";
+            this.btnCreateGrid.Size = new System.Drawing.Size(75, 23);
+            this.btnCreateGrid.TabIndex = 4;
+            this.btnCreateGrid.Text = "Create grid";
+            this.btnCreateGrid.UseVisualStyleBackColor = true;
+            this.btnCreateGrid.Click += new System.EventHandler(this.OnClickOnbtnCreateGrid);
+            // 
             // FrmHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnCreateGrid);
             this.Controls.Add(this.btnSignUpOrUpdateData);
             this.Controls.Add(this.btnSignIn);
             this.Controls.Add(this.groupBox1);
@@ -97,6 +109,7 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnSignIn;
         private System.Windows.Forms.Button btnSignUpOrUpdateData;
+        private System.Windows.Forms.Button btnCreateGrid;
     }
 }
 

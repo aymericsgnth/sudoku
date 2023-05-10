@@ -56,7 +56,16 @@ namespace Sudoku
         {
             string nickname = tbxNickname.Text;
             string password = tbxPassword.Text;
-            CredentialsAreCorrects(nickname, password);
+            if (!CredentialsAreCorrects(nickname, password))
+            {
+                ShowErrorMessage("nickname or password is not correct");
+                return;
+            }
+            // hide message and exit
+            lblError.Visible = false;
+            DialogResult = DialogResult.OK;
+            Close();
+
         }
         /// <summary>
         /// Check if credentials are valid
@@ -81,6 +90,15 @@ namespace Sudoku
             Dictionary<string, string> user = output[0];
             return SecretHasher.Verify(password, user["sPassword"]);
             
+        }
+        /// <summary>
+        /// Show an error message
+        /// </summary>
+        /// <param name="message">The message to show</param>
+        private void ShowErrorMessage(string message)
+        {
+            lblError.Text = message;
+            lblError.Visible = true;
         }
     }
 }

@@ -35,6 +35,7 @@
             this.tbxPassword = new System.Windows.Forms.TextBox();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnOK = new System.Windows.Forms.Button();
+            this.lblError = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -103,11 +104,23 @@
             this.btnOK.UseVisualStyleBackColor = true;
             this.btnOK.Click += new System.EventHandler(this.OnClickOnbtnOK);
             // 
+            // lblError
+            // 
+            this.lblError.AutoSize = true;
+            this.lblError.ForeColor = System.Drawing.Color.Red;
+            this.lblError.Location = new System.Drawing.Point(23, 258);
+            this.lblError.Name = "lblError";
+            this.lblError.Size = new System.Drawing.Size(28, 13);
+            this.lblError.TabIndex = 7;
+            this.lblError.Text = "error";
+            this.lblError.Visible = false;
+            // 
             // FrmSignIn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(330, 379);
+            this.Controls.Add(this.lblError);
             this.Controls.Add(this.btnOK);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.tbxPassword);
@@ -134,5 +147,6 @@
         private System.Windows.Forms.TextBox tbxPassword;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnOK;
+        private System.Windows.Forms.Label lblError;
     }
 }
