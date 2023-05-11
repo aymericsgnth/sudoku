@@ -38,3 +38,16 @@ Aujourd'hui je compte finir la vue pour créer une grille et commencer la vue po
 J'ai bien avancé, toutefois j'ai encore rencontré un problème avec cette charmante connection Mysql. Je n'ai donc malheureuseument pas pu faire l'appel à la base pour l'insertion. J'ai également fait mon Powerpoint pour présenter mon stage, ce qui m'a pris une partie considérable de ma journée. 
 
 Je suis content de ma productivité et prêt à recommencer demain. 
+
+
+## [11.05.2023] 
+Aujourd'hui je me focalise sr mon code(pas de Powerpoint comme hier). Je veux finir la vue pour créer une grille et commencer la vue pour afficher les grilles
+
+### Objectifs réalisés
+J'ai réussi à faire plus de choses que ce que je pensais ! La vue pour créer une grille est terminée, c'est le cas également pour la vue qui affiche les grilles(il ne manque plus qu'a rediriger vers la vue permettant de jouer, mais je ne l'ai pas encore faite donc difficile d'implémenter cette fonctionnalité maintenant). 
+
+### Difficultés rencontrées
+Encore une fois des soucis avec le connecteur MySQL. J'ai toutefois reglé le soucis rapidement
+
+### Conclusion
+Comme d'habitude, je suis très co
