@@ -75,6 +75,7 @@ namespace Sudoku
                 btnConfirm.Enabled = false;
                 return;
             }
+            // password are not the same
             if(tbxPassword.Text != tbxPasswordConfirm.Text)
             {
                 ShowErrorMessage("Passwords are differents");
@@ -107,12 +108,15 @@ namespace Sudoku
                 },
                 {
                     "@password",
+                    // hash password
                     SecretHasher.Hash(password)
                 }
             };
             DB db = new DB();
             try {
-                db.Query(query, sqlParams);
+                db.Query(query, sqlParams, true);
+                Globals.UserId = Convert.ToInt32(db.Query("SELECT LAST_INSERT_ID() as userId")[0]["userId"]);
+                Globals.Connected = true;
                 DialogResult = DialogResult.OK;
                 Close();
             }
@@ -123,7 +127,11 @@ namespace Sudoku
                 {
                     ShowErrorMessage("The nickname is already took");
                     unavailableNicknames.Add(nickname);
+                    return;
                 }
+                // throw exception
+                throw;
+
             }
 
         }

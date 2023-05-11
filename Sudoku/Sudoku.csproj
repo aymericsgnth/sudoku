@@ -95,6 +95,16 @@
     <Compile Include="FrmSignUpOrUpdateData.Designer.cs">
       <DependentUpon>FrmSignUpOrUpdateData.cs</DependentUpon>
     </Compile>
+    <Compile Include="Globals.cs" />
+    <Compile Include="GridChecker.cs" />
+    <Compile Include="GridPreview.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GridPreview.Designer.cs">
+      <DependentUpon>GridPreview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IErrorMessager.cs" />
+    <Compile Include="ISudokuGridChecker.cs" />
     <Compile Include="NumericTextbox.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -113,6 +123,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmSignUpOrUpdateData.resx">
       <DependentUpon>FrmSignUpOrUpdateData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GridPreview.resx">
+      <DependentUpon>GridPreview.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

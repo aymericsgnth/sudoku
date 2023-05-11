@@ -22,10 +22,13 @@ namespace Sudoku
         FrmSignUpOrUpdateData frmSignUpOrUpdateData = null;
         FrmSignIn FrmSignIn = null;
         FrmGridCreation gridCreation = null;
-        bool connected = false;
+        private const int GRID_ONE_DIMENSION_LENGTH = 9;
+        private const int PICTURE_BOX_SIDE_SIZE = 150;
         public FrmHome()
         {
             InitializeComponent();
+            ShowGrids();
+            
         }
         /// <summary>
         /// Fired when btnSignUpOrUpdateData is clicked
@@ -63,18 +66,81 @@ namespace Sudoku
         private void OnClickOnbtnCreateGrid(object sender, EventArgs e)
         {
             gridCreation = new FrmGridCreation();
-            gridCreation.ShowDialog();
+            if (gridCreation.ShowDialog() == DialogResult.OK)
+            {
+                ShowGrids();
+            }
         }
         /// <summary>
         /// This function is called when user is connected
         /// </summary>
         private void UserIsNowConnected()
         {
-            connected = true;
+            btnSignIn.Visible = false;
+            btnSignUpOrUpdateData.Text = "Modify my account";
             btnCreateGrid.Visible = true;
 
         }
-       
+        /// <summary>
+        /// Show grids with a custom "pagination"
+        /// </summary>
+        /// <param name="limit">The max number of rows to get</param>
+        /// <param name="offset">The rows to ignore</param>
+        private void ShowGrids(int limit = 10, int offset = 0)
+        {
+            flpnlGrids.Controls.Clear();
+            //                                                                                      limit & offset => pagination
+            string sqlQuery = "SELECT sGrid, dCreatedAt, iLevel FROM grid order by dCreatedAt DESC LIMIT @limit OFFSET @offset";
+            Dictionary<string, string> sqlParams = new Dictionary<string, string>
+            {
+                {"@limit", limit.ToString() },
+                {"@offset", offset.ToString() }
+            };
+            List<Dictionary<string, string>> grids =  new DB().Query(sqlQuery, sqlParams);
+            int itemsCount = 0, heightLevel = 1;
+            foreach (Dictionary<string, string>  gridData in grids)
+            {
+                string[][] outputGrid = new string[GRID_ONE_DIMENSION_LENGTH][];
+                string charGrid = gridData["sGrid"];
+                int count = 0, rowCount = 0;
+                foreach (char value in charGrid)
+                {
+                    // if we have 9 elements
+                    if (count == 0)
+                    {
+                        outputGrid[rowCount] = new string[GRID_ONE_DIMENSION_LENGTH];
+                    }
+                    outputGrid[rowCount][count] = value.ToString();
+                    count++;
+                    if (count == 9)
+                    {
+                        count = 0;
+                        rowCount++;
+                    }
+                }
+                GridPreview gridPreview = new GridPreview(outputGrid);
+                Bitmap img = new Bitmap(gridPreview.Width, gridPreview.Height);
+                gridPreview.DrawToBitmap(img, gridPreview.ClientRectangle);
+                if (itemsCount % 3 == 0 && itemsCount != 0)
+                {
+                    heightLevel++;
+                }
+                PictureBox pictureBox = new PictureBox
+                {
+                    Image = img,
+                    Parent = flpnlGrids,
+                    Location = new Point(PICTURE_BOX_SIDE_SIZE * (itemsCount % 3), Math.Max(PICTURE_BOX_SIDE_SIZE * itemsCount * heightLevel - PICTURE_BOX_SIDE_SIZE, 0)),
+                    Size = new Size(PICTURE_BOX_SIDE_SIZE, PICTURE_BOX_SIDE_SIZE),
+                    SizeMode = PictureBoxSizeMode.StretchImage,
+                    Margin = new Padding(20, 0, 20, 10)
+                
+                };
+                itemsCount ++;
+            }
+            
+        }
+
+
 
         
     }

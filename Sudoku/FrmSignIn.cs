@@ -75,7 +75,7 @@ namespace Sudoku
         /// <returns>bool</returns>
         private bool CredentialsAreCorrects(string nickname, string password)
         {
-            string query = "SELECT sNickname, sPassword from user where sNickname = @nickname";
+            string query = "SELECT iUserCode, sNickname, sPassword from user where sNickname = @nickname";
             Dictionary<string, string> sqlParams = new Dictionary<string, string>
             {
                 {"@nickname", nickname},
@@ -88,7 +88,14 @@ namespace Sudoku
             }
 
             Dictionary<string, string> user = output[0];
-            return SecretHasher.Verify(password, user["sPassword"]);
+            
+            if (SecretHasher.Verify(password, user["sPassword"]))
+            {
+                Globals.UserId = Convert.ToInt32(user["iUserCode"]);
+                Globals.Connected = true;
+                return true;
+            }
+            return false;
             
         }
         /// <summary>

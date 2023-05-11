@@ -24,7 +24,6 @@ namespace Sudoku
         public int Row { get => _row; set => _row = value; }
         public int Col { get => _col; set => _col = value; }
 
-        private static readonly int[] NUMBERS = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
 
         /// <summary>
         /// Fired when a key is pressed in an input
@@ -54,22 +53,23 @@ namespace Sudoku
             int row = numericTextbox.Row;
             int col = numericTextbox.Col;
             // get parent frm
-            FrmGridCreation parentFrm = (FrmGridCreation)Parent.Parent.Parent;
-            if (parentFrm.ValueIsInRow(row, numberEnter.ToString()))
+            ISudokuGridChecker parentFrm = (ISudokuGridChecker)Parent.Parent.Parent;
+            
+            if (GridChecker.ValueIsInRow(parentFrm.GetGrid(),row, numberEnter.ToString()))
             {
                 e.Handled = true;
                 parentFrm.ShowErrorMessage($"The number {numberEnter} is already in the row");
                 return;
             }
             // if the number is in column
-            if (parentFrm.ValueIsInColumn(col, numberEnter.ToString()))
+            if (GridChecker.ValueIsInColumn(parentFrm.GetGrid(),col, numberEnter.ToString()))
             {
                 e.Handled = true;
                 parentFrm.ShowErrorMessage($"The number {numberEnter} is already in the column");
                 return;
             }
             // check if in the square
-            if (parentFrm.ValueInSquare(row, col, numberEnter.ToString()))
+            if (GridChecker.ValueInSquare(parentFrm.GetGrid(),row, col, numberEnter.ToString()))
             {
                 e.Handled = true;
                 parentFrm.ShowErrorMessage($"The number {numberEnter} is already in the square");

@@ -1,13 +1,13 @@
 ﻿namespace Sudoku
 {
-    partial class FrmGridCreation
+    partial class GridPreview
     {
-        /// <summary>
+        /// <summary> 
         /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
+        /// <summary> 
         /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
@@ -20,17 +20,24 @@
             base.Dispose(disposing);
         }
 
-        #region Windows Form Designer generated code
+        #region Component Designer generated code
 
-        /// <summary>
-        /// Required method for Designer support - do not modify
+        /// <summary> 
+        /// Required method for Designer support - do not modify 
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
             this.grbGrid = new System.Windows.Forms.GroupBox();
             this.pnl9 = new System.Windows.Forms.Panel();
+            this.pnl8 = new System.Windows.Forms.Panel();
+            this.pnl7 = new System.Windows.Forms.Panel();
+            this.pnl6 = new System.Windows.Forms.Panel();
+            this.pnl5 = new System.Windows.Forms.Panel();
+            this.pnl4 = new System.Windows.Forms.Panel();
+            this.pnl3 = new System.Windows.Forms.Panel();
+            this.pnl2 = new System.Windows.Forms.Panel();
+            this.pnl1 = new System.Windows.Forms.Panel();
             this.numericTextbox73 = new Sudoku.NumericTextbox();
             this.numericTextbox74 = new Sudoku.NumericTextbox();
             this.numericTextbox75 = new Sudoku.NumericTextbox();
@@ -40,7 +47,6 @@
             this.numericTextbox79 = new Sudoku.NumericTextbox();
             this.numericTextbox80 = new Sudoku.NumericTextbox();
             this.numericTextbox81 = new Sudoku.NumericTextbox();
-            this.pnl8 = new System.Windows.Forms.Panel();
             this.numericTextbox64 = new Sudoku.NumericTextbox();
             this.numericTextbox65 = new Sudoku.NumericTextbox();
             this.numericTextbox66 = new Sudoku.NumericTextbox();
@@ -50,7 +56,6 @@
             this.numericTextbox70 = new Sudoku.NumericTextbox();
             this.numericTextbox71 = new Sudoku.NumericTextbox();
             this.numericTextbox72 = new Sudoku.NumericTextbox();
-            this.pnl7 = new System.Windows.Forms.Panel();
             this.numericTextbox55 = new Sudoku.NumericTextbox();
             this.numericTextbox56 = new Sudoku.NumericTextbox();
             this.numericTextbox57 = new Sudoku.NumericTextbox();
@@ -60,7 +65,6 @@
             this.numericTextbox61 = new Sudoku.NumericTextbox();
             this.numericTextbox62 = new Sudoku.NumericTextbox();
             this.numericTextbox63 = new Sudoku.NumericTextbox();
-            this.pnl6 = new System.Windows.Forms.Panel();
             this.numericTextbox46 = new Sudoku.NumericTextbox();
             this.numericTextbox47 = new Sudoku.NumericTextbox();
             this.numericTextbox48 = new Sudoku.NumericTextbox();
@@ -70,7 +74,6 @@
             this.numericTextbox52 = new Sudoku.NumericTextbox();
             this.numericTextbox53 = new Sudoku.NumericTextbox();
             this.numericTextbox54 = new Sudoku.NumericTextbox();
-            this.pnl5 = new System.Windows.Forms.Panel();
             this.numericTextbox37 = new Sudoku.NumericTextbox();
             this.numericTextbox38 = new Sudoku.NumericTextbox();
             this.numericTextbox39 = new Sudoku.NumericTextbox();
@@ -80,7 +83,6 @@
             this.numericTextbox43 = new Sudoku.NumericTextbox();
             this.numericTextbox44 = new Sudoku.NumericTextbox();
             this.numericTextbox45 = new Sudoku.NumericTextbox();
-            this.pnl4 = new System.Windows.Forms.Panel();
             this.numericTextbox28 = new Sudoku.NumericTextbox();
             this.numericTextbox29 = new Sudoku.NumericTextbox();
             this.numericTextbox30 = new Sudoku.NumericTextbox();
@@ -90,7 +92,6 @@
             this.numericTextbox34 = new Sudoku.NumericTextbox();
             this.numericTextbox35 = new Sudoku.NumericTextbox();
             this.numericTextbox36 = new Sudoku.NumericTextbox();
-            this.pnl3 = new System.Windows.Forms.Panel();
             this.numericTextbox27 = new Sudoku.NumericTextbox();
             this.numericTextbox26 = new Sudoku.NumericTextbox();
             this.numericTextbox25 = new Sudoku.NumericTextbox();
@@ -100,7 +101,6 @@
             this.numericTextbox9 = new Sudoku.NumericTextbox();
             this.numericTextbox8 = new Sudoku.NumericTextbox();
             this.numericTextbox7 = new Sudoku.NumericTextbox();
-            this.pnl2 = new System.Windows.Forms.Panel();
             this.numericTextbox24 = new Sudoku.NumericTextbox();
             this.numericTextbox23 = new Sudoku.NumericTextbox();
             this.numericTextbox22 = new Sudoku.NumericTextbox();
@@ -110,7 +110,6 @@
             this.numericTextbox6 = new Sudoku.NumericTextbox();
             this.numericTextbox5 = new Sudoku.NumericTextbox();
             this.numericTextbox4 = new Sudoku.NumericTextbox();
-            this.pnl1 = new System.Windows.Forms.Panel();
             this.numericTextbox21 = new Sudoku.NumericTextbox();
             this.numericTextbox20 = new Sudoku.NumericTextbox();
             this.numericTextbox19 = new Sudoku.NumericTextbox();
@@ -120,10 +119,6 @@
             this.numericTextbox3 = new Sudoku.NumericTextbox();
             this.numericTextbox2 = new Sudoku.NumericTextbox();
             this.numericTextbox1 = new Sudoku.NumericTextbox();
-            this.lblError = new System.Windows.Forms.Label();
-            this.btnCancel = new System.Windows.Forms.Button();
-            this.btnOK = new System.Windows.Forms.Button();
-            this.cmbLevel = new System.Windows.Forms.ComboBox();
             this.grbGrid.SuspendLayout();
             this.pnl9.SuspendLayout();
             this.pnl8.SuspendLayout();
@@ -136,16 +131,6 @@
             this.pnl1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(13, 13);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(202, 37);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Create a grid";
-            // 
             // grbGrid
             // 
             this.grbGrid.Controls.Add(this.pnl9);
@@ -157,10 +142,10 @@
             this.grbGrid.Controls.Add(this.pnl3);
             this.grbGrid.Controls.Add(this.pnl2);
             this.grbGrid.Controls.Add(this.pnl1);
-            this.grbGrid.Location = new System.Drawing.Point(14, 82);
+            this.grbGrid.Location = new System.Drawing.Point(3, 3);
             this.grbGrid.Name = "grbGrid";
             this.grbGrid.Size = new System.Drawing.Size(630, 642);
-            this.grbGrid.TabIndex = 1;
+            this.grbGrid.TabIndex = 2;
             this.grbGrid.TabStop = false;
             // 
             // pnl9
@@ -180,6 +165,150 @@
             this.pnl9.TabIndex = 25;
             this.pnl9.Tag = "9";
             this.pnl9.Paint += new System.Windows.Forms.PaintEventHandler(this.OnPaintOnPanels);
+            // 
+            // pnl8
+            // 
+            this.pnl8.Controls.Add(this.numericTextbox64);
+            this.pnl8.Controls.Add(this.numericTextbox65);
+            this.pnl8.Controls.Add(this.numericTextbox66);
+            this.pnl8.Controls.Add(this.numericTextbox67);
+            this.pnl8.Controls.Add(this.numericTextbox68);
+            this.pnl8.Controls.Add(this.numericTextbox69);
+            this.pnl8.Controls.Add(this.numericTextbox70);
+            this.pnl8.Controls.Add(this.numericTextbox71);
+            this.pnl8.Controls.Add(this.numericTextbox72);
+            this.pnl8.Location = new System.Drawing.Point(215, 442);
+            this.pnl8.Name = "pnl8";
+            this.pnl8.Size = new System.Drawing.Size(200, 200);
+            this.pnl8.TabIndex = 24;
+            this.pnl8.Tag = "8";
+            this.pnl8.Paint += new System.Windows.Forms.PaintEventHandler(this.OnPaintOnPanels);
+            // 
+            // pnl7
+            // 
+            this.pnl7.Controls.Add(this.numericTextbox55);
+            this.pnl7.Controls.Add(this.numericTextbox56);
+            this.pnl7.Controls.Add(this.numericTextbox57);
+            this.pnl7.Controls.Add(this.numericTextbox58);
+            this.pnl7.Controls.Add(this.numericTextbox59);
+            this.pnl7.Controls.Add(this.numericTextbox60);
+            this.pnl7.Controls.Add(this.numericTextbox61);
+            this.pnl7.Controls.Add(this.numericTextbox62);
+            this.pnl7.Controls.Add(this.numericTextbox63);
+            this.pnl7.Location = new System.Drawing.Point(9, 442);
+            this.pnl7.Name = "pnl7";
+            this.pnl7.Size = new System.Drawing.Size(200, 200);
+            this.pnl7.TabIndex = 23;
+            this.pnl7.Tag = "7";
+            this.pnl7.Paint += new System.Windows.Forms.PaintEventHandler(this.OnPaintOnPanels);
+            // 
+            // pnl6
+            // 
+            this.pnl6.Controls.Add(this.numericTextbox46);
+            this.pnl6.Controls.Add(this.numericTextbox47);
+            this.pnl6.Controls.Add(this.numericTextbox48);
+            this.pnl6.Controls.Add(this.numericTextbox49);
+            this.pnl6.Controls.Add(this.numericTextbox50);
+            this.pnl6.Controls.Add(this.numericTextbox51);
+            this.pnl6.Controls.Add(this.numericTextbox52);
+            this.pnl6.Controls.Add(this.numericTextbox53);
+            this.pnl6.Controls.Add(this.numericTextbox54);
+            this.pnl6.Location = new System.Drawing.Point(421, 232);
+            this.pnl6.Name = "pnl6";
+            this.pnl6.Size = new System.Drawing.Size(200, 200);
+            this.pnl6.TabIndex = 24;
+            this.pnl6.Tag = "6";
+            this.pnl6.Paint += new System.Windows.Forms.PaintEventHandler(this.OnPaintOnPanels);
+            // 
+            // pnl5
+            // 
+            this.pnl5.Controls.Add(this.numericTextbox37);
+            this.pnl5.Controls.Add(this.numericTextbox38);
+            this.pnl5.Controls.Add(this.numericTextbox39);
+            this.pnl5.Controls.Add(this.numericTextbox40);
+            this.pnl5.Controls.Add(this.numericTextbox41);
+            this.pnl5.Controls.Add(this.numericTextbox42);
+            this.pnl5.Controls.Add(this.numericTextbox43);
+            this.pnl5.Controls.Add(this.numericTextbox44);
+            this.pnl5.Controls.Add(this.numericTextbox45);
+            this.pnl5.Location = new System.Drawing.Point(212, 232);
+            this.pnl5.Name = "pnl5";
+            this.pnl5.Size = new System.Drawing.Size(200, 200);
+            this.pnl5.TabIndex = 23;
+            this.pnl5.Tag = "5";
+            this.pnl5.Paint += new System.Windows.Forms.PaintEventHandler(this.OnPaintOnPanels);
+            // 
+            // pnl4
+            // 
+            this.pnl4.Controls.Add(this.numericTextbox28);
+            this.pnl4.Controls.Add(this.numericTextbox29);
+            this.pnl4.Controls.Add(this.numericTextbox30);
+            this.pnl4.Controls.Add(this.numericTextbox31);
+            this.pnl4.Controls.Add(this.numericTextbox32);
+            this.pnl4.Controls.Add(this.numericTextbox33);
+            this.pnl4.Controls.Add(this.numericTextbox34);
+            this.pnl4.Controls.Add(this.numericTextbox35);
+            this.pnl4.Controls.Add(this.numericTextbox36);
+            this.pnl4.Location = new System.Drawing.Point(6, 232);
+            this.pnl4.Name = "pnl4";
+            this.pnl4.Size = new System.Drawing.Size(200, 200);
+            this.pnl4.TabIndex = 17;
+            this.pnl4.Tag = "4";
+            this.pnl4.Paint += new System.Windows.Forms.PaintEventHandler(this.OnPaintOnPanels);
+            // 
+            // pnl3
+            // 
+            this.pnl3.Controls.Add(this.numericTextbox27);
+            this.pnl3.Controls.Add(this.numericTextbox26);
+            this.pnl3.Controls.Add(this.numericTextbox25);
+            this.pnl3.Controls.Add(this.numericTextbox18);
+            this.pnl3.Controls.Add(this.numericTextbox17);
+            this.pnl3.Controls.Add(this.numericTextbox16);
+            this.pnl3.Controls.Add(this.numericTextbox9);
+            this.pnl3.Controls.Add(this.numericTextbox8);
+            this.pnl3.Controls.Add(this.numericTextbox7);
+            this.pnl3.Location = new System.Drawing.Point(418, 19);
+            this.pnl3.Name = "pnl3";
+            this.pnl3.Size = new System.Drawing.Size(200, 200);
+            this.pnl3.TabIndex = 17;
+            this.pnl3.Tag = "3";
+            this.pnl3.Paint += new System.Windows.Forms.PaintEventHandler(this.OnPaintOnPanels);
+            // 
+            // pnl2
+            // 
+            this.pnl2.Controls.Add(this.numericTextbox24);
+            this.pnl2.Controls.Add(this.numericTextbox23);
+            this.pnl2.Controls.Add(this.numericTextbox22);
+            this.pnl2.Controls.Add(this.numericTextbox15);
+            this.pnl2.Controls.Add(this.numericTextbox14);
+            this.pnl2.Controls.Add(this.numericTextbox13);
+            this.pnl2.Controls.Add(this.numericTextbox6);
+            this.pnl2.Controls.Add(this.numericTextbox5);
+            this.pnl2.Controls.Add(this.numericTextbox4);
+            this.pnl2.Location = new System.Drawing.Point(212, 19);
+            this.pnl2.Name = "pnl2";
+            this.pnl2.Size = new System.Drawing.Size(200, 200);
+            this.pnl2.TabIndex = 24;
+            this.pnl2.Tag = "2";
+            this.pnl2.Paint += new System.Windows.Forms.PaintEventHandler(this.OnPaintOnPanels);
+            // 
+            // pnl1
+            // 
+            this.pnl1.Controls.Add(this.numericTextbox21);
+            this.pnl1.Controls.Add(this.numericTextbox20);
+            this.pnl1.Controls.Add(this.numericTextbox19);
+            this.pnl1.Controls.Add(this.numericTextbox12);
+            this.pnl1.Controls.Add(this.numericTextbox11);
+            this.pnl1.Controls.Add(this.numericTextbox10);
+            this.pnl1.Controls.Add(this.numericTextbox3);
+            this.pnl1.Controls.Add(this.numericTextbox2);
+            this.pnl1.Controls.Add(this.numericTextbox1);
+            this.pnl1.Location = new System.Drawing.Point(6, 19);
+            this.pnl1.Name = "pnl1";
+            this.pnl1.Size = new System.Drawing.Size(200, 200);
+            this.pnl1.TabIndex = 16;
+            this.pnl1.Tag = "1";
+            this.pnl1.Paint += new System.Windows.Forms.PaintEventHandler(this.OnPaintOnPanels);
             // 
             // numericTextbox73
             // 
@@ -280,24 +409,6 @@
             this.numericTextbox81.Size = new System.Drawing.Size(58, 59);
             this.numericTextbox81.TabIndex = 14;
             // 
-            // pnl8
-            // 
-            this.pnl8.Controls.Add(this.numericTextbox64);
-            this.pnl8.Controls.Add(this.numericTextbox65);
-            this.pnl8.Controls.Add(this.numericTextbox66);
-            this.pnl8.Controls.Add(this.numericTextbox67);
-            this.pnl8.Controls.Add(this.numericTextbox68);
-            this.pnl8.Controls.Add(this.numericTextbox69);
-            this.pnl8.Controls.Add(this.numericTextbox70);
-            this.pnl8.Controls.Add(this.numericTextbox71);
-            this.pnl8.Controls.Add(this.numericTextbox72);
-            this.pnl8.Location = new System.Drawing.Point(215, 442);
-            this.pnl8.Name = "pnl8";
-            this.pnl8.Size = new System.Drawing.Size(200, 200);
-            this.pnl8.TabIndex = 24;
-            this.pnl8.Tag = "8";
-            this.pnl8.Paint += new System.Windows.Forms.PaintEventHandler(this.OnPaintOnPanels);
-            // 
             // numericTextbox64
             // 
             this.numericTextbox64.Col = 5;
@@ -396,24 +507,6 @@
             this.numericTextbox72.Row = 6;
             this.numericTextbox72.Size = new System.Drawing.Size(58, 59);
             this.numericTextbox72.TabIndex = 14;
-            // 
-            // pnl7
-            // 
-            this.pnl7.Controls.Add(this.numericTextbox55);
-            this.pnl7.Controls.Add(this.numericTextbox56);
-            this.pnl7.Controls.Add(this.numericTextbox57);
-            this.pnl7.Controls.Add(this.numericTextbox58);
-            this.pnl7.Controls.Add(this.numericTextbox59);
-            this.pnl7.Controls.Add(this.numericTextbox60);
-            this.pnl7.Controls.Add(this.numericTextbox61);
-            this.pnl7.Controls.Add(this.numericTextbox62);
-            this.pnl7.Controls.Add(this.numericTextbox63);
-            this.pnl7.Location = new System.Drawing.Point(9, 442);
-            this.pnl7.Name = "pnl7";
-            this.pnl7.Size = new System.Drawing.Size(200, 200);
-            this.pnl7.TabIndex = 23;
-            this.pnl7.Tag = "7";
-            this.pnl7.Paint += new System.Windows.Forms.PaintEventHandler(this.OnPaintOnPanels);
             // 
             // numericTextbox55
             // 
@@ -514,24 +607,6 @@
             this.numericTextbox63.Size = new System.Drawing.Size(58, 59);
             this.numericTextbox63.TabIndex = 14;
             // 
-            // pnl6
-            // 
-            this.pnl6.Controls.Add(this.numericTextbox46);
-            this.pnl6.Controls.Add(this.numericTextbox47);
-            this.pnl6.Controls.Add(this.numericTextbox48);
-            this.pnl6.Controls.Add(this.numericTextbox49);
-            this.pnl6.Controls.Add(this.numericTextbox50);
-            this.pnl6.Controls.Add(this.numericTextbox51);
-            this.pnl6.Controls.Add(this.numericTextbox52);
-            this.pnl6.Controls.Add(this.numericTextbox53);
-            this.pnl6.Controls.Add(this.numericTextbox54);
-            this.pnl6.Location = new System.Drawing.Point(421, 232);
-            this.pnl6.Name = "pnl6";
-            this.pnl6.Size = new System.Drawing.Size(200, 200);
-            this.pnl6.TabIndex = 24;
-            this.pnl6.Tag = "6";
-            this.pnl6.Paint += new System.Windows.Forms.PaintEventHandler(this.OnPaintOnPanels);
-            // 
             // numericTextbox46
             // 
             this.numericTextbox46.Col = 8;
@@ -630,24 +705,6 @@
             this.numericTextbox54.Row = 3;
             this.numericTextbox54.Size = new System.Drawing.Size(58, 59);
             this.numericTextbox54.TabIndex = 14;
-            // 
-            // pnl5
-            // 
-            this.pnl5.Controls.Add(this.numericTextbox37);
-            this.pnl5.Controls.Add(this.numericTextbox38);
-            this.pnl5.Controls.Add(this.numericTextbox39);
-            this.pnl5.Controls.Add(this.numericTextbox40);
-            this.pnl5.Controls.Add(this.numericTextbox41);
-            this.pnl5.Controls.Add(this.numericTextbox42);
-            this.pnl5.Controls.Add(this.numericTextbox43);
-            this.pnl5.Controls.Add(this.numericTextbox44);
-            this.pnl5.Controls.Add(this.numericTextbox45);
-            this.pnl5.Location = new System.Drawing.Point(212, 232);
-            this.pnl5.Name = "pnl5";
-            this.pnl5.Size = new System.Drawing.Size(200, 200);
-            this.pnl5.TabIndex = 23;
-            this.pnl5.Tag = "5";
-            this.pnl5.Paint += new System.Windows.Forms.PaintEventHandler(this.OnPaintOnPanels);
             // 
             // numericTextbox37
             // 
@@ -748,24 +805,6 @@
             this.numericTextbox45.Size = new System.Drawing.Size(58, 59);
             this.numericTextbox45.TabIndex = 14;
             // 
-            // pnl4
-            // 
-            this.pnl4.Controls.Add(this.numericTextbox28);
-            this.pnl4.Controls.Add(this.numericTextbox29);
-            this.pnl4.Controls.Add(this.numericTextbox30);
-            this.pnl4.Controls.Add(this.numericTextbox31);
-            this.pnl4.Controls.Add(this.numericTextbox32);
-            this.pnl4.Controls.Add(this.numericTextbox33);
-            this.pnl4.Controls.Add(this.numericTextbox34);
-            this.pnl4.Controls.Add(this.numericTextbox35);
-            this.pnl4.Controls.Add(this.numericTextbox36);
-            this.pnl4.Location = new System.Drawing.Point(6, 232);
-            this.pnl4.Name = "pnl4";
-            this.pnl4.Size = new System.Drawing.Size(200, 200);
-            this.pnl4.TabIndex = 17;
-            this.pnl4.Tag = "4";
-            this.pnl4.Paint += new System.Windows.Forms.PaintEventHandler(this.OnPaintOnPanels);
-            // 
             // numericTextbox28
             // 
             this.numericTextbox28.Col = 2;
@@ -865,24 +904,6 @@
             this.numericTextbox36.Size = new System.Drawing.Size(58, 59);
             this.numericTextbox36.TabIndex = 14;
             // 
-            // pnl3
-            // 
-            this.pnl3.Controls.Add(this.numericTextbox27);
-            this.pnl3.Controls.Add(this.numericTextbox26);
-            this.pnl3.Controls.Add(this.numericTextbox25);
-            this.pnl3.Controls.Add(this.numericTextbox18);
-            this.pnl3.Controls.Add(this.numericTextbox17);
-            this.pnl3.Controls.Add(this.numericTextbox16);
-            this.pnl3.Controls.Add(this.numericTextbox9);
-            this.pnl3.Controls.Add(this.numericTextbox8);
-            this.pnl3.Controls.Add(this.numericTextbox7);
-            this.pnl3.Location = new System.Drawing.Point(418, 19);
-            this.pnl3.Name = "pnl3";
-            this.pnl3.Size = new System.Drawing.Size(200, 200);
-            this.pnl3.TabIndex = 17;
-            this.pnl3.Tag = "3";
-            this.pnl3.Paint += new System.Windows.Forms.PaintEventHandler(this.OnPaintOnPanels);
-            // 
             // numericTextbox27
             // 
             this.numericTextbox27.Col = 8;
@@ -931,7 +952,7 @@
             // 
             this.numericTextbox17.Col = 7;
             this.numericTextbox17.Font = new System.Drawing.Font("Microsoft Sans Serif", 34F);
-            this.numericTextbox17.Location = new System.Drawing.Point(76, 72);
+            this.numericTextbox17.Location = new System.Drawing.Point(73, 71);
             this.numericTextbox17.MaxLength = 1;
             this.numericTextbox17.Name = "numericTextbox17";
             this.numericTextbox17.Row = 1;
@@ -981,24 +1002,6 @@
             this.numericTextbox7.Row = 0;
             this.numericTextbox7.Size = new System.Drawing.Size(58, 59);
             this.numericTextbox7.TabIndex = 20;
-            // 
-            // pnl2
-            // 
-            this.pnl2.Controls.Add(this.numericTextbox24);
-            this.pnl2.Controls.Add(this.numericTextbox23);
-            this.pnl2.Controls.Add(this.numericTextbox22);
-            this.pnl2.Controls.Add(this.numericTextbox15);
-            this.pnl2.Controls.Add(this.numericTextbox14);
-            this.pnl2.Controls.Add(this.numericTextbox13);
-            this.pnl2.Controls.Add(this.numericTextbox6);
-            this.pnl2.Controls.Add(this.numericTextbox5);
-            this.pnl2.Controls.Add(this.numericTextbox4);
-            this.pnl2.Location = new System.Drawing.Point(212, 19);
-            this.pnl2.Name = "pnl2";
-            this.pnl2.Size = new System.Drawing.Size(200, 200);
-            this.pnl2.TabIndex = 24;
-            this.pnl2.Tag = "2";
-            this.pnl2.Paint += new System.Windows.Forms.PaintEventHandler(this.OnPaintOnPanels);
             // 
             // numericTextbox24
             // 
@@ -1099,24 +1102,6 @@
             this.numericTextbox4.Size = new System.Drawing.Size(58, 59);
             this.numericTextbox4.TabIndex = 17;
             // 
-            // pnl1
-            // 
-            this.pnl1.Controls.Add(this.numericTextbox21);
-            this.pnl1.Controls.Add(this.numericTextbox20);
-            this.pnl1.Controls.Add(this.numericTextbox19);
-            this.pnl1.Controls.Add(this.numericTextbox12);
-            this.pnl1.Controls.Add(this.numericTextbox11);
-            this.pnl1.Controls.Add(this.numericTextbox10);
-            this.pnl1.Controls.Add(this.numericTextbox3);
-            this.pnl1.Controls.Add(this.numericTextbox2);
-            this.pnl1.Controls.Add(this.numericTextbox1);
-            this.pnl1.Location = new System.Drawing.Point(6, 19);
-            this.pnl1.Name = "pnl1";
-            this.pnl1.Size = new System.Drawing.Size(200, 200);
-            this.pnl1.TabIndex = 16;
-            this.pnl1.Tag = "1";
-            this.pnl1.Paint += new System.Windows.Forms.PaintEventHandler(this.OnPaintOnPanels);
-            // 
             // numericTextbox21
             // 
             this.numericTextbox21.Col = 2;
@@ -1213,69 +1198,16 @@
             this.numericTextbox1.MaxLength = 1;
             this.numericTextbox1.Name = "numericTextbox1";
             this.numericTextbox1.Row = 0;
-            this.numericTextbox1.Size = new System.Drawing.Size(59, 59);
+            this.numericTextbox1.Size = new System.Drawing.Size(58, 59);
             this.numericTextbox1.TabIndex = 14;
             // 
-            // lblError
-            // 
-            this.lblError.AutoSize = true;
-            this.lblError.ForeColor = System.Drawing.Color.Red;
-            this.lblError.Location = new System.Drawing.Point(20, 754);
-            this.lblError.Name = "lblError";
-            this.lblError.Size = new System.Drawing.Size(46, 13);
-            this.lblError.TabIndex = 2;
-            this.lblError.Text = "ERROR";
-            this.lblError.Visible = false;
-            // 
-            // btnCancel
-            // 
-            this.btnCancel.Location = new System.Drawing.Point(32, 799);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(75, 23);
-            this.btnCancel.TabIndex = 3;
-            this.btnCancel.Text = "Cancel";
-            this.btnCancel.UseVisualStyleBackColor = true;
-            this.btnCancel.Click += new System.EventHandler(this.OnClickOnBtnCancel);
-            // 
-            // btnOK
-            // 
-            this.btnOK.Location = new System.Drawing.Point(441, 801);
-            this.btnOK.Name = "btnOK";
-            this.btnOK.Size = new System.Drawing.Size(75, 23);
-            this.btnOK.TabIndex = 4;
-            this.btnOK.Text = "OK";
-            this.btnOK.UseVisualStyleBackColor = true;
-            this.btnOK.Click += new System.EventHandler(this.OnClickOnBtnOK);
-            // 
-            // cmbLevel
-            // 
-            this.cmbLevel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbLevel.FormattingEnabled = true;
-            this.cmbLevel.Items.AddRange(new object[] {
-            "Easy",
-            "Medium",
-            "Hard\t\t"});
-            this.cmbLevel.Location = new System.Drawing.Point(226, 801);
-            this.cmbLevel.Name = "cmbLevel";
-            this.cmbLevel.Size = new System.Drawing.Size(121, 21);
-            this.cmbLevel.TabIndex = 6;
-            // 
-            // FrmGridCreation
+            // GridPreview
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(651, 861);
-            this.Controls.Add(this.cmbLevel);
-            this.Controls.Add(this.btnOK);
-            this.Controls.Add(this.btnCancel);
-            this.Controls.Add(this.lblError);
             this.Controls.Add(this.grbGrid);
-            this.Controls.Add(this.label1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
-            this.Name = "FrmGridCreation";
-            this.Text = "FrmGridCreation";
+            this.Name = "GridPreview";
+            this.Size = new System.Drawing.Size(637, 649);
             this.grbGrid.ResumeLayout(false);
             this.pnl9.ResumeLayout(false);
             this.pnl9.PerformLayout();
@@ -1296,17 +1228,12 @@
             this.pnl1.ResumeLayout(false);
             this.pnl1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox grbGrid;
-        private System.Windows.Forms.Panel pnl1;
-        private System.Windows.Forms.Panel pnl3;
-        private System.Windows.Forms.Panel pnl2;
         private System.Windows.Forms.Panel pnl9;
         private NumericTextbox numericTextbox73;
         private NumericTextbox numericTextbox74;
@@ -1367,6 +1294,7 @@
         private NumericTextbox numericTextbox34;
         private NumericTextbox numericTextbox35;
         private NumericTextbox numericTextbox36;
+        private System.Windows.Forms.Panel pnl3;
         private NumericTextbox numericTextbox27;
         private NumericTextbox numericTextbox26;
         private NumericTextbox numericTextbox25;
@@ -1376,6 +1304,7 @@
         private NumericTextbox numericTextbox9;
         private NumericTextbox numericTextbox8;
         private NumericTextbox numericTextbox7;
+        private System.Windows.Forms.Panel pnl2;
         private NumericTextbox numericTextbox24;
         private NumericTextbox numericTextbox23;
         private NumericTextbox numericTextbox22;
@@ -1385,6 +1314,7 @@
         private NumericTextbox numericTextbox6;
         private NumericTextbox numericTextbox5;
         private NumericTextbox numericTextbox4;
+        private System.Windows.Forms.Panel pnl1;
         private NumericTextbox numericTextbox21;
         private NumericTextbox numericTextbox20;
         private NumericTextbox numericTextbox19;
@@ -1394,9 +1324,5 @@
         private NumericTextbox numericTextbox3;
         private NumericTextbox numericTextbox2;
         private NumericTextbox numericTextbox1;
-        private System.Windows.Forms.Label lblError;
-        private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.Button btnOK;
-        private System.Windows.Forms.ComboBox cmbLevel;
     }
 }

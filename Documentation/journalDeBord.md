@@ -50,4 +50,4 @@ J'ai réussi à faire plus de choses que ce que je pensais ! La vue pour créer 
 Encore une fois des soucis avec le connecteur MySQL. J'ai toutefois reglé le soucis rapidement
 
 ### Conclusion
-Comme d'habitude, je suis très co
+Comme d'habitude, je suis très content de ma journée et prêt à recommencer demain ! 

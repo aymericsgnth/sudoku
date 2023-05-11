@@ -23,18 +23,35 @@ namespace Sudoku
         /// </summary>
         /// <param name="query">The SQL Query</param>
         /// <param name="sqlParams">The parameters</param>
+        /// <param name="keepConnectionAlive">Keep the connection alive. It will be re-used and delete later if you pass true, then false</param>
         /// <returns>What the database return, stocked in a list</returns>
-
-        public List<Dictionary<string, string>> Query(string query, Dictionary<string, string> sqlParams)
+        private MySqlConnection mySqlConnection;
+        public List<Dictionary<string, string>> Query(string query, Dictionary<string, string> sqlParams = null, bool keepConnectionAlive = false)
         {
-            MySqlConnection mySqlConnection = new MySqlConnection(ConfigurationManager.ConnectionStrings["ConString"].ToString());
-            MySqlCommand mySqlCommand = new MySqlCommand(query, mySqlConnection);
-            mySqlConnection.Open();
-            List<Dictionary<string, string>> output = new List<Dictionary<string, string>>();
-            foreach (KeyValuePair<string, string> placeholderWithValue in sqlParams)
+            if (mySqlConnection == null)
             {
-                // = bindValue in PDO
-                mySqlCommand.Parameters.AddWithValue(placeholderWithValue.Key, placeholderWithValue.Value);
+                mySqlConnection = new MySqlConnection(ConfigurationManager.ConnectionStrings["ConString"].ToString());
+                mySqlConnection.Open();
+            }
+            MySqlCommand mySqlCommand = new MySqlCommand(query, mySqlConnection);
+            
+            List<Dictionary<string, string>> output = new List<Dictionary<string, string>>();
+            if (sqlParams != null)
+            {
+                foreach (KeyValuePair<string, string> placeholderWithValue in sqlParams)
+                {
+                    // = bindValue in PDO
+                    object value;
+                    if (int.TryParse(placeholderWithValue.Value, out _))
+                    {
+                        value = Convert.ToInt32(placeholderWithValue.Value);
+                    }
+                    else
+                    {
+                        value = placeholderWithValue.Value;
+                    }
+                    mySqlCommand.Parameters.AddWithValue(placeholderWithValue.Key, value);
+                }
             }
 
             try
@@ -61,8 +78,11 @@ namespace Sudoku
             {
                 // delete all Objects
                 mySqlCommand.Dispose();
-                mySqlConnection.Close();
-                mySqlConnection.Dispose();
+                if (!keepConnectionAlive)
+                {
+                    mySqlConnection.Close();
+                    mySqlConnection.Dispose();
+                }
             }
 
             return output;

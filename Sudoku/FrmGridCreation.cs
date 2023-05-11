@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySqlConnector;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -11,15 +12,22 @@ using System.Windows.Forms;
 
 namespace Sudoku
 {
-    public partial class FrmGridCreation : Form
+    public partial class FrmGridCreation : Form, ISudokuGridChecker
     {
         private const ButtonBorderStyle BORDER_BBS = ButtonBorderStyle.Solid;
         private readonly Color BORDER_COLOR = Color.Black;
         private const int BORDER_THICKNESS = 2;
-        private static readonly int[] NUMBERS = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+        
+        private enum Level
+        {
+            Easy = 0, 
+            Medium = 1,
+            Hard = 2,
+        }
         public FrmGridCreation()
         {
             InitializeComponent();
+            cmbLevel.SelectedIndex = 0;
         }
         /// <summary>
         /// Paint the border on square
@@ -74,6 +82,7 @@ namespace Sudoku
         {
             lblError.Visible = false;
         }
+
         /// <summary>
         /// Fired when btnCancel is clicked
         /// </summary>
@@ -92,63 +101,56 @@ namespace Sudoku
         /// <param name="e"></param>
         private void OnClickOnBtnOK(object sender, EventArgs e)
         {
-            
-        }
-
-        /// <summary>
-        /// Check if a value is in a specific row
-        /// </summary>
-        /// <param name="row"></param>
-        /// <param name="value"></param>
-        /// <returns>True if value is in row, false otherwise</returns>
-        public bool ValueIsInRow(int row, string value)
-        {
             string[][] grid = GetGrid();
-            return grid[row].Contains(value);
-        }
-
-        /// <summary>
-        /// Check if a specific value is in a specific column
-        /// </summary>
-        /// <param name="column"></param>
-        /// <param name="value"></param>
-        /// <returns>True if the value is in the column, false otherwise</returns>
-        public bool ValueIsInColumn(int column, string value)
-        {
-            string[][] grid = GetGrid();
-            return grid.Select(gridraw => gridraw.Where(gridCol => Array.IndexOf(gridraw, gridCol) == column).ElementAtOrDefault(0)).ToList().Contains(value);
-        }
-
-        /// <summary>
-        /// Check if the value is in a specific square
-        /// </summary>
-        /// <param name="rowOfValue"></param>
-        /// <param name="columnOfValue"></param>
-        /// <param name="value"></param>
-        /// <returns>True if the value is in a specific square, false otherwise</returns>
-        public bool ValueInSquare(int rowOfValue, int columnOfValue, string value)
-        {
-            string[][] grid = GetGrid();
-            int[] rowsToGet = NUMBERS.Skip(rowOfValue - rowOfValue % 3).Take(3).ToArray();
-
-            int[] colsToTake = NUMBERS.Skip(columnOfValue - columnOfValue % 3).Take(3).ToArray();
-            // check if in the square
             for (int i = 0; i < grid.Length; i++)
             {
-                if (rowsToGet.Contains(i))
+                // if line empty
+                if (grid[i].All(el => el == ""))
                 {
-                    string[] gridRow = grid[i];
-                    for (int j = 0; j < gridRow.Length; j++)
-                    {
-                        if (colsToTake.Contains(j) && grid[i][j] == value)
-                        {
-                            return true;
-                        }
-                    }
+                    ShowErrorMessage($"Please put at least one number on row {i+1}");
+                    return;
+                }
+                // if column empty
+                if (grid.Select(gridRow => gridRow[i]).All(el => el == ""))
+                {
+                    ShowErrorMessage($"Please put at least one number on column {i+1}");
+                    return;
                 }
             }
-            return false;
+
+            string sqlQuery = "INSERT INTO grid(sGrid, iCreatorCode, iLevel) VALUES(@grid, @creatorCode, @level)";
+            int level = (int)Enum.Parse(typeof(Level), cmbLevel.Text);
+            // create SQL params
+            Dictionary<string, string> sqlParams = new Dictionary<string, string>
+            {
+                {"@grid",  String.Join(String.Empty, grid.SelectMany(gridRow => gridRow.Select(gridCol => gridCol == "" ? " " : gridCol)))},
+                {"@creatorCode", Globals.UserId.ToString()},
+                {"@level", level.ToString() }
+            };
+           
+            DB db = new DB();
+            try
+            {
+                db.Query(sqlQuery, sqlParams);
+            }
+            catch (MySqlException exception)
+            {
+                // the grid already exists
+                if (exception.ErrorCode.ToString() == "DuplicateKeyEntry")
+                {
+                    ShowErrorMessage("The grid already exists");
+                    return;
+                }
+                throw;
+                
+            }
+            DialogResult = DialogResult.OK;
+            Close();
+            
+
         }
+
+        
 
 
     }
