@@ -12,12 +12,8 @@ using System.Windows.Forms;
 
 namespace Sudoku
 {
-    public partial class FrmGridCreation : Form, ISudokuGridChecker
+    public partial class FrmGridCreation : Form, IErrorMessager
     {
-        private const ButtonBorderStyle BORDER_BBS = ButtonBorderStyle.Solid;
-        private readonly Color BORDER_COLOR = Color.Black;
-        private const int BORDER_THICKNESS = 2;
-        
         private enum Level
         {
             Easy = 0, 
@@ -29,41 +25,8 @@ namespace Sudoku
             InitializeComponent();
             cmbLevel.SelectedIndex = 0;
         }
-        /// <summary>
-        /// Paint the border on square
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void OnPaintOnPanels(object sender, PaintEventArgs e)
-        {
-            Panel panel = (Panel)sender;
-            ControlPaint.DrawBorder(e.Graphics, panel.ClientRectangle,
-                BORDER_COLOR, BORDER_THICKNESS, BORDER_BBS,
-                BORDER_COLOR, BORDER_THICKNESS, BORDER_BBS,
-                BORDER_COLOR, BORDER_THICKNESS, BORDER_BBS,
-                BORDER_COLOR, BORDER_THICKNESS, BORDER_BBS
-                );
-        }
         
-        /// <summary>
-        /// Get grid as array
-        /// </summary>
-        /// <returns>the grid</returns>
-        public string[][] GetGrid()
-        {
-            // good look for understanding this instruction ;)
-            List<NumericTextbox> items =  grbGrid.Controls.OfType<Panel>().Select(panel => panel.Controls.OfType<NumericTextbox>()).ToList().SelectMany(listOfNtxb => listOfNtxb).ToList();
-            string[][] grid = new string[9][];
-            foreach (NumericTextbox ntbx in items)
-            {
-                if (grid[ntbx.Row] == null)
-                {
-                    grid[ntbx.Row] = new string[9];
-                }
-                grid[ntbx.Row][ntbx.Col] = ntbx.Text;
-            }
-            return grid;
-        }
+        
 
         /// <summary>
         /// Show an error message
@@ -101,7 +64,7 @@ namespace Sudoku
         /// <param name="e"></param>
         private void OnClickOnBtnOK(object sender, EventArgs e)
         {
-            string[][] grid = GetGrid();
+            string[][] grid = userCtrlGrid.GetGrid();
             for (int i = 0; i < grid.Length; i++)
             {
                 // if line empty

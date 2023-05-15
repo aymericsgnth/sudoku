@@ -28,7 +28,7 @@ namespace Sudoku
         {
             InitializeComponent();
             ShowGrids();
-            
+
         }
         /// <summary>
         /// Fired when btnSignUpOrUpdateData is clicked
@@ -89,20 +89,21 @@ namespace Sudoku
         private void ShowGrids(int limit = 10, int offset = 0)
         {
             flpnlGrids.Controls.Clear();
-            //                                                                                      limit & offset => pagination
-            string sqlQuery = "SELECT sGrid, dCreatedAt, iLevel FROM grid order by dCreatedAt DESC LIMIT @limit OFFSET @offset";
+            //                                                                                                      limit & offset => pagination
+            string sqlQuery = "SELECT iGridCode, sGrid, dCreatedAt, iLevel FROM grid order by dCreatedAt DESC LIMIT @limit OFFSET @offset";
             Dictionary<string, string> sqlParams = new Dictionary<string, string>
             {
                 {"@limit", limit.ToString() },
                 {"@offset", offset.ToString() }
             };
-            List<Dictionary<string, string>> grids =  new DB().Query(sqlQuery, sqlParams);
+            List<Dictionary<string, string>> grids = new DB().Query(sqlQuery, sqlParams);
             int itemsCount = 0, heightLevel = 1;
-            foreach (Dictionary<string, string>  gridData in grids)
+            foreach (Dictionary<string, string> gridData in grids)
             {
                 string[][] outputGrid = new string[GRID_ONE_DIMENSION_LENGTH][];
                 string charGrid = gridData["sGrid"];
                 int count = 0, rowCount = 0;
+                // create multidimensional grid
                 foreach (char value in charGrid)
                 {
                     // if we have 9 elements
@@ -118,8 +119,10 @@ namespace Sudoku
                         rowCount++;
                     }
                 }
-                GridPreview gridPreview = new GridPreview(outputGrid);
+                GridPreview gridPreview = new GridPreview();
+                gridPreview.ShowGrid(outputGrid);
                 Bitmap img = new Bitmap(gridPreview.Width, gridPreview.Height);
+                // draw gridpreview => img
                 gridPreview.DrawToBitmap(img, gridPreview.ClientRectangle);
                 if (itemsCount % 3 == 0 && itemsCount != 0)
                 {
@@ -132,17 +135,32 @@ namespace Sudoku
                     Location = new Point(PICTURE_BOX_SIDE_SIZE * (itemsCount % 3), Math.Max(PICTURE_BOX_SIDE_SIZE * itemsCount * heightLevel - PICTURE_BOX_SIDE_SIZE, 0)),
                     Size = new Size(PICTURE_BOX_SIDE_SIZE, PICTURE_BOX_SIDE_SIZE),
                     SizeMode = PictureBoxSizeMode.StretchImage,
-                    Margin = new Padding(20, 0, 20, 10)
-                
+                    Margin = new Padding(20, 0, 20, 10),
+                    Cursor = Cursors.Cross,
+              
                 };
-                itemsCount ++;
+                // show game view
+                pictureBox.Click += (s, e) => { PlayGame(gridData, outputGrid); };
+               
+
+                itemsCount++;
             }
-            
+
+        }
+        /// <summary>
+        /// Show game view
+        /// </summary>
+        /// <param name="gridData"></param>
+        /// <param name="grid"></param>
+        private void PlayGame(Dictionary<string,string> gridData, string[][] grid)
+        {
+            FrmGame game = new FrmGame(gridData, grid);
+            game.ShowDialog();
         }
 
 
 
-        
+
     }
 
 }

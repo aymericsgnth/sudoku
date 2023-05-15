@@ -5,6 +5,7 @@ using System.Data;
 using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -16,11 +17,9 @@ namespace Sudoku
         private const ButtonBorderStyle BORDER_BBS = ButtonBorderStyle.Solid;
         private readonly Color BORDER_COLOR = Color.Black;
         private const int BORDER_THICKNESS = 4;
-        private const int ARRAY_LENGTH = 9;
-        public GridPreview(string[][] grid)
+        public GridPreview()
         {
             InitializeComponent();
-            ShowGrid(grid);
         }
 
         /// <summary>
@@ -39,7 +38,7 @@ namespace Sudoku
                 );
         }
 
-        private void ShowGrid(string[][] grid)
+        public void ShowGrid(string[][] grid)
         {
 
             List<NumericTextbox> items = grbGrid.Controls.OfType<Panel>().Select(panel => panel.Controls.OfType<NumericTextbox>()).ToList().SelectMany(listOfNtxb => listOfNtxb).ToList();
@@ -48,6 +47,29 @@ namespace Sudoku
                 ntbx.Text = grid[ntbx.Row][ntbx.Col];
             }
         }
+
+        public string[][] GetGrid()
+        {
+            // good look for understanding this instruction ;)
+            List<NumericTextbox> items = grbGrid.Controls.OfType<Panel>().Select(panel => panel.Controls.OfType<NumericTextbox>()).SelectMany(listOfNtxb => listOfNtxb).ToList();
+            string[][] grid = new string[9][];
+            foreach (NumericTextbox ntbx in items)
+            {
+                if (grid[ntbx.Row] == null)
+                {
+                    grid[ntbx.Row] = new string[9];
+                }
+                grid[ntbx.Row][ntbx.Col] = ntbx.Text;
+            }
+           
+            return grid;
+        }
+        public ControlCollection GetControls()
+        {
+            return grbGrid.Controls;
+        }
+
+        
 
 
     }

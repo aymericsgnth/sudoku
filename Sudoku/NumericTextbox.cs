@@ -17,6 +17,7 @@ namespace Sudoku
             MaxLength = 1;
             Font = new System.Drawing.Font(Font.FontFamily, 34);
             KeyPress += OnKeyPressOnNumericTextbox;
+            GotFocus += OnFocus;
         }
         private int _row;
         private int _col;
@@ -48,28 +49,30 @@ namespace Sudoku
                 e.Handled = true;
                 return;
             }
-            
+
             NumericTextbox numericTextbox = (NumericTextbox)sender;
+
             int row = numericTextbox.Row;
             int col = numericTextbox.Col;
             // get parent frm
-            ISudokuGridChecker parentFrm = (ISudokuGridChecker)Parent.Parent.Parent;
-            
-            if (GridChecker.ValueIsInRow(parentFrm.GetGrid(),row, numberEnter.ToString()))
+            GridPreview gridView = GetGridView();
+            IErrorMessager parentFrm = (IErrorMessager)gridView.Parent;
+
+            if (GridChecker.ValueIsInRow(gridView.GetGrid(), row, numberEnter.ToString()))
             {
                 e.Handled = true;
                 parentFrm.ShowErrorMessage($"The number {numberEnter} is already in the row");
                 return;
             }
             // if the number is in column
-            if (GridChecker.ValueIsInColumn(parentFrm.GetGrid(),col, numberEnter.ToString()))
+            if (GridChecker.ValueIsInColumn(gridView.GetGrid(), col, numberEnter.ToString()))
             {
                 e.Handled = true;
                 parentFrm.ShowErrorMessage($"The number {numberEnter} is already in the column");
                 return;
             }
             // check if in the square
-            if (GridChecker.ValueInSquare(parentFrm.GetGrid(),row, col, numberEnter.ToString()))
+            if (GridChecker.ValueInSquare(gridView.GetGrid(), row, col, numberEnter.ToString()))
             {
                 e.Handled = true;
                 parentFrm.ShowErrorMessage($"The number {numberEnter} is already in the square");
@@ -77,6 +80,27 @@ namespace Sudoku
             }
             parentFrm.HideErrorMessage();
         }
+
+        /// <summary>
+        /// Fired when NumericTextbox has focus
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void OnFocus(object sender, EventArgs e)
+        {
+            NumericTextbox numericTextbox = (NumericTextbox)sender;
+            if (numericTextbox.Text == " ")
+            {
+                numericTextbox.Text = "";
+            }
+        }
+
+        private GridPreview GetGridView()
+        {
+            return (GridPreview)Parent.Parent.Parent;
+        }
+
+        
 
 
     }

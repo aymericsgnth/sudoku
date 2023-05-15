@@ -40,3 +40,4 @@ C:\Users\Admin\Documents\Cours\2022-23\Sudoku\App\Sudoku\obj\Debug\Sudoku.csproj
 C:\Users\Admin\Documents\Cours\2022-23\Sudoku\App\Sudoku\obj\Debug\Sudoku.FrmSignIn.resources
 C:\Users\Admin\Documents\Cours\2022-23\Sudoku\App\Sudoku\obj\Debug\Sudoku.FrmGridCreation.resources
 C:\Users\Admin\Documents\Cours\2022-23\Sudoku\App\Sudoku\obj\Debug\Sudoku.GridPreview.resources
+C:\Users\Admin\Documents\Cours\2022-23\Sudoku\App\Sudoku\obj\Debug\Sudoku.FrmGame.resources

@@ -77,6 +77,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmGame.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmGame.Designer.cs">
+      <DependentUpon>FrmGame.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmGridCreation.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -104,7 +110,6 @@
       <DependentUpon>GridPreview.cs</DependentUpon>
     </Compile>
     <Compile Include="IErrorMessager.cs" />
-    <Compile Include="ISudokuGridChecker.cs" />
     <Compile Include="NumericTextbox.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -114,6 +119,9 @@
     <Compile Include="SudokuSolver.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmGame.resx">
+      <DependentUpon>FrmGame.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmGridCreation.resx">
       <DependentUpon>FrmGridCreation.cs</DependentUpon>

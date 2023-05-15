@@ -51,3 +51,12 @@ Encore une fois des soucis avec le connecteur MySQL. J'ai toutefois reglé le so
 
 ### Conclusion
 Comme d'habitude, je suis très content de ma journée et prêt à recommencer demain ! 
+
+
+## [15.05.2023]
+
+### Objectifs
+Je compte faire la vue jouer(ou du moins bien l'avancer) avec un peu de docs. 
+
+### Objectifs réalisés
+J'ai réussi a faire la vue jouer, je n'ai toutefois pas eu le temps de faire de la documentation.J'ai toutefois aidé mes camarades et fait un peu de refactoring :)
