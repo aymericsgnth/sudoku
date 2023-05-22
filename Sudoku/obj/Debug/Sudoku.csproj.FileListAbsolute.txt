@@ -39,5 +39,5 @@ C:\Users\Admin\Documents\Cours\2022-23\Sudoku\App\Sudoku\bin\Debug\System.Thread
 C:\Users\Admin\Documents\Cours\2022-23\Sudoku\App\Sudoku\obj\Debug\Sudoku.csproj.CopyComplete
 C:\Users\Admin\Documents\Cours\2022-23\Sudoku\App\Sudoku\obj\Debug\Sudoku.FrmSignIn.resources
 C:\Users\Admin\Documents\Cours\2022-23\Sudoku\App\Sudoku\obj\Debug\Sudoku.FrmGridCreation.resources
-C:\Users\Admin\Documents\Cours\2022-23\Sudoku\App\Sudoku\obj\Debug\Sudoku.GridPreview.resources
 C:\Users\Admin\Documents\Cours\2022-23\Sudoku\App\Sudoku\obj\Debug\Sudoku.FrmGame.resources
+C:\Users\Admin\Documents\Cours\2022-23\Sudoku\App\Sudoku\obj\Debug\Sudoku.GridView.resources

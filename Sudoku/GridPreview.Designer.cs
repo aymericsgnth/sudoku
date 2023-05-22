@@ -1,6 +1,6 @@
 ﻿namespace Sudoku
 {
-    partial class GridPreview
+    partial class GridView
     {
         /// <summary> 
         /// Required designer variable.

@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.userCtrlGridPreview = new Sudoku.GridPreview();
+            this.userCtrlGridPreview = new Sudoku.GridView();
             this.lblError = new System.Windows.Forms.Label();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnDone = new System.Windows.Forms.Button();
@@ -94,7 +94,7 @@
 
         #endregion
 
-        private GridPreview userCtrlGridPreview;
+        private GridView userCtrlGridPreview;
         private System.Windows.Forms.Label lblError;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnDone;

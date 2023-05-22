@@ -55,7 +55,7 @@ namespace Sudoku
             int row = numericTextbox.Row;
             int col = numericTextbox.Col;
             // get parent frm
-            GridPreview gridView = GetGridView();
+            GridView gridView = GetGridView();
             IErrorMessager parentFrm = (IErrorMessager)gridView.Parent;
 
             if (GridChecker.ValueIsInRow(gridView.GetGrid(), row, numberEnter.ToString()))
@@ -95,9 +95,9 @@ namespace Sudoku
             }
         }
 
-        private GridPreview GetGridView()
+        private GridView GetGridView()
         {
-            return (GridPreview)Parent.Parent.Parent;
+            return (GridView)Parent.Parent.Parent;
         }
 
         

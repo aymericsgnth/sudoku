@@ -60,3 +60,19 @@ Je compte faire la vue jouer(ou du moins bien l'avancer) avec un peu de docs.
 
 ### Objectifs réalisés
 J'ai réussi a faire la vue jouer, je n'ai toutefois pas eu le temps de faire de la documentation.J'ai toutefois aidé mes camarades et fait un peu de refactoring :)
+
+
+
+
+## [17.05.2023]
+
+### Objectifs
+Aujourd'hui je compte améliorer la stabilité de mon application en reglant quelques bugs et faire de la documentation 
+
+### Objectifs réalisés
+Parfois, il faut revoir ses priorités. Monsieur Zanardi est venu me voir pour me demander de faire mon rapport de stage, j'ai donc passé la journée dessus pour faire quelque chose de correct à présenter. J'ai également corrigé quelques bugs dans mon application. 
+
+
+## [22.05.2023]
+### Objectifs
+Maintenant que j'ai fini mon rapport de stage je peux avancer mon projet. Je compte faire les dernières features & corriger quelques bugs

@@ -25,6 +25,10 @@ namespace Sudoku
         {
             InitializeComponent();
             this.type = type;
+            if (type == Types.Update)
+            {
+                lblTitle.Text = "Update data";
+            }
         }
          public enum Types
         {
@@ -57,7 +61,7 @@ namespace Sudoku
             }
             else
             {
-
+                UpdateUser();
             }
         }
 
@@ -135,6 +139,41 @@ namespace Sudoku
             }
 
         }
+
+        private void UpdateUser()
+        {
+            string nickname = tbxPseudo.Text;
+            string password = tbxPassword.Text;
+            string sqlQuery = @"UPDATE user
+                                SET sNickname = @pseudo,
+                                    sPassword = @password
+                              WHERE iUserCode = @userId";
+            Dictionary<string, string> sqlParams = new Dictionary<string, string>
+            {
+                {"@pseudo", nickname },
+                {"@password", SecretHasher.Hash(password) },
+                {"@userId", Globals.UserId.ToString() }
+            };
+            try
+            {
+                new DB().Query(sqlQuery, sqlParams);
+                DialogResult = DialogResult.OK;
+                Close();
+            }
+            catch (MySqlException e)
+            {
+                // nickname already exists
+                if (e.ErrorCode.ToString() == "DuplicateKeyEntry")
+                {
+                    ShowErrorMessage("The nickname is already took");
+                    unavailableNicknames.Add(nickname);
+                    return;
+                }
+                // throw exception
+                throw;
+            }
+        }
+
         /// <summary>
         /// Show an error message
         /// </summary>

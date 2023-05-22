@@ -12,12 +12,12 @@ using System.Windows.Forms;
 
 namespace Sudoku
 {
-    public partial class GridPreview : UserControl
+    public partial class GridView : UserControl
     {
         private const ButtonBorderStyle BORDER_BBS = ButtonBorderStyle.Solid;
         private readonly Color BORDER_COLOR = Color.Black;
         private const int BORDER_THICKNESS = 4;
-        public GridPreview()
+        public GridView()
         {
             InitializeComponent();
         }

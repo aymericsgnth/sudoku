@@ -12,6 +12,11 @@ namespace Sudoku
 {
     public partial class FrmGame : Form, IErrorMessager
     {
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="gridData"></param>
+        /// <param name="grid">The grid of the sudoku</param>
         public FrmGame(Dictionary<string, string> gridData, string[][] grid)
         {
             InitializeComponent();

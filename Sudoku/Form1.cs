@@ -1,4 +1,5 @@
 ﻿using System;
+using System.CodeDom.Compiler;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -23,11 +24,16 @@ namespace Sudoku
         FrmSignIn FrmSignIn = null;
         FrmGridCreation gridCreation = null;
         private const int GRID_ONE_DIMENSION_LENGTH = 9;
-        private const int PICTURE_BOX_SIDE_SIZE = 150;
+        private const int GROUPBOX_SIDE_SIZE = 150;
+        private const int LABEL_WIDTH = 75;
+        private const int LABEL_HEIGHT = 20;
+        private const int LABEL_MARGIN_TOP = 10;
+
         public FrmHome()
         {
             InitializeComponent();
             ShowGrids();
+            cmbLevel.SelectedIndex = 0;
 
         }
         /// <summary>
@@ -38,7 +44,7 @@ namespace Sudoku
         /// <param name="e"></param>
         private void OnClickOnbtnSignUpOrUpdateData(object sender, EventArgs e)
         {
-            frmSignUpOrUpdateData = new FrmSignUpOrUpdateData(FrmSignUpOrUpdateData.Types.Insertion);
+            frmSignUpOrUpdateData = new FrmSignUpOrUpdateData(Globals.Connected ? FrmSignUpOrUpdateData.Types.Update : FrmSignUpOrUpdateData.Types.Insertion);
             if (frmSignUpOrUpdateData.ShowDialog() == DialogResult.OK)
             {
                 UserIsNowConnected();
@@ -86,16 +92,17 @@ namespace Sudoku
         /// </summary>
         /// <param name="limit">The max number of rows to get</param>
         /// <param name="offset">The rows to ignore</param>
-        private void ShowGrids(int limit = 10, int offset = 0)
+        private void ShowGrids(int? level = null )
         {
             flpnlGrids.Controls.Clear();
-            //                                                                                                      limit & offset => pagination
-            string sqlQuery = "SELECT iGridCode, sGrid, dCreatedAt, iLevel FROM grid order by dCreatedAt DESC LIMIT @limit OFFSET @offset";
-            Dictionary<string, string> sqlParams = new Dictionary<string, string>
+            string sqlQuery = "SELECT iGridCode, sGrid, dCreatedAt, iLevel FROM grid ";
+            Dictionary<string, string> sqlParams = new Dictionary<string, string>();
+            if (level != null)
             {
-                {"@limit", limit.ToString() },
-                {"@offset", offset.ToString() }
-            };
+                sqlQuery += "WHERE iLevel = @level";
+                sqlParams.Add("@level", level.ToString());
+            }
+            sqlQuery += " ORDER BY dCreatedAt DESC";
             List<Dictionary<string, string>> grids = new DB().Query(sqlQuery, sqlParams);
             int itemsCount = 0, heightLevel = 1;
             foreach (Dictionary<string, string> gridData in grids)
@@ -119,7 +126,16 @@ namespace Sudoku
                         rowCount++;
                     }
                 }
-                GridPreview gridPreview = new GridPreview();
+                // output container generation
+                GroupBox gbx = new GroupBox
+                {
+                    Parent = flpnlGrids,
+                    Location = new Point(GROUPBOX_SIDE_SIZE * (itemsCount % 3), Math.Max(GROUPBOX_SIDE_SIZE * itemsCount * heightLevel - GROUPBOX_SIDE_SIZE, 0)),
+                    Size = new Size(GROUPBOX_SIDE_SIZE, GROUPBOX_SIDE_SIZE),
+                    Margin = new Padding(20, 0, 20, 10),
+                    Cursor = Cursors.Cross,
+                };
+                GridView gridPreview = new GridView();
                 gridPreview.ShowGrid(outputGrid);
                 Bitmap img = new Bitmap(gridPreview.Width, gridPreview.Height);
                 // draw gridpreview => img
@@ -131,17 +147,39 @@ namespace Sudoku
                 PictureBox pictureBox = new PictureBox
                 {
                     Image = img,
-                    Parent = flpnlGrids,
-                    Location = new Point(PICTURE_BOX_SIDE_SIZE * (itemsCount % 3), Math.Max(PICTURE_BOX_SIDE_SIZE * itemsCount * heightLevel - PICTURE_BOX_SIDE_SIZE, 0)),
-                    Size = new Size(PICTURE_BOX_SIDE_SIZE, PICTURE_BOX_SIDE_SIZE),
+                    Parent = gbx,
+                    Location = new Point(0,0),
+                    Size = new Size(GROUPBOX_SIDE_SIZE, GROUPBOX_SIDE_SIZE - 20),
                     SizeMode = PictureBoxSizeMode.StretchImage,
-                    Margin = new Padding(20, 0, 20, 10),
-                    Cursor = Cursors.Cross,
-              
+
                 };
+                
+                pictureBox.Click += (s, e) => { ShowBestScores(gridData); };
                 // show game view
-                pictureBox.Click += (s, e) => { PlayGame(gridData, outputGrid); };
-               
+                pictureBox.DoubleClick += (s, e) => { PlayGame(gridData, outputGrid); };
+                string lvl = string.Empty;
+                switch (gridData["iLevel"])
+                {
+                    case "0":
+                        lvl = "easy";
+                        break;
+                    case "1":
+                        lvl = "medium";
+                        break;
+                    case "2":
+                        lvl = "hard";
+                        break;
+                    default:
+                        break;
+                }
+                Label lblDifficult = new Label
+                {
+                    Text = lvl,
+                    Location = new Point(0,GROUPBOX_SIDE_SIZE - 20),
+                    Parent = gbx
+                };
+                
+
 
                 itemsCount++;
             }
@@ -152,15 +190,85 @@ namespace Sudoku
         /// </summary>
         /// <param name="gridData"></param>
         /// <param name="grid"></param>
-        private void PlayGame(Dictionary<string,string> gridData, string[][] grid)
+        private void PlayGame(Dictionary<string, string> gridData, string[][] grid)
         {
             FrmGame game = new FrmGame(gridData, grid);
             game.ShowDialog();
         }
+        /// <summary>
+        /// Show best scores
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ShowBestScores(Dictionary<string, string> gridData)
+        {
+            gbxBestScores.Controls.Clear();
+            string SqlQuery = @"SELECT iResolveTime, sNickname 
+                                  FROM result
+                            INNER JOIN user
+                                    ON result.iUserCode = user.iUserCode
+                                 WHERE iGridCode = @gridId
+                              ORDER BY iResolveTime ASC";
+            Dictionary<string, string> SqlParams = new Dictionary<string, string>
+            {
+                {"@gridId", gridData["iGridCode"] }
+            };
+            List<Dictionary<string, string>> results = new DB().Query(SqlQuery, SqlParams);
+            int counter = 0;
+            foreach (Dictionary<string, string> result in results.Take(3))
+            {
 
+                // generate output
+                Label lblCount = new Label
+                {
+                    Text = (counter + 1) + ".".ToString(),
+                    Location = new Point(0, counter * LABEL_HEIGHT + LABEL_MARGIN_TOP),
+                    AutoSize = false,
+                    Width = LABEL_WIDTH,
+                    Height = LABEL_HEIGHT
+        
+                };
+                Label lblPlayerName = new Label
+                {
+                    Text = result["sNickname"],
+                    Location = new Point(LABEL_WIDTH + 50, counter * LABEL_HEIGHT + LABEL_MARGIN_TOP),
+                    AutoSize = false,
+                    Width = LABEL_WIDTH,
+                    Height = LABEL_HEIGHT
+                };
+                Label lblTime = new Label
+                {
+                    Text = result["iResolveTime"] + "s",
+                    Location = new Point(LABEL_WIDTH + LABEL_WIDTH * 2 + 50, counter * LABEL_HEIGHT + LABEL_MARGIN_TOP),
+                    AutoSize = false,
+                    Width = LABEL_WIDTH,
+                    Height = LABEL_HEIGHT
+                };
+                gbxBestScores.Controls.Add(lblCount);
+                gbxBestScores.Controls.Add(lblPlayerName);
+                gbxBestScores.Controls.Add(lblTime);
+                // incr
+                counter++;
+            }
+        }
 
-
-
+        /// <summary>
+        /// Fired when selectedValue has changed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void SelectedLevelChanged(object sender, EventArgs e)
+        {
+            // if = all
+            if (cmbLevel.SelectedIndex == 0)
+            {
+                ShowGrids();
+            }
+            else
+            {
+                ShowGrids(cmbLevel.SelectedIndex - 1);
+            }
+        }
     }
 
 }

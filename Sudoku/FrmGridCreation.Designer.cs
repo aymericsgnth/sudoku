@@ -33,7 +33,7 @@
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnOK = new System.Windows.Forms.Button();
             this.cmbLevel = new System.Windows.Forms.ComboBox();
-            this.userCtrlGrid = new Sudoku.GridPreview();
+            this.userCtrlGrid = new Sudoku.GridView();
             this.SuspendLayout();
             // 
             // label1
@@ -125,6 +125,6 @@
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnOK;
         private System.Windows.Forms.ComboBox cmbLevel;
-        private GridPreview userCtrlGrid;
+        private GridView userCtrlGrid;
     }
 }
