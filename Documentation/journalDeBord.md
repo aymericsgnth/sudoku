@@ -76,3 +76,10 @@ Parfois, il faut revoir ses priorités. Monsieur Zanardi est venu me voir pour m
 ## [22.05.2023]
 ### Objectifs
 Maintenant que j'ai fini mon rapport de stage je peux avancer mon projet. Je compte faire les dernières features & corriger quelques bugs
+
+### Objectif réalisés
+J'ai réussi à corriger énormément de bug. Il me reste une dernière feature et j'aurai terminé. Je suis très content de ma journée
+
+## [24.05.2023]
+### Objectifs
+Aujourd'hui je vais améliorer mon rapport de stage jugé trop court. J'essaie de fix les derniers bugs de mon application. 
