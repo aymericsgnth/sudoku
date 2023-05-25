@@ -83,3 +83,10 @@ J'ai réussi à corriger énormément de bug. Il me reste une dernière feature 
 ## [24.05.2023]
 ### Objectifs
 Aujourd'hui je vais améliorer mon rapport de stage jugé trop court. J'essaie de fix les derniers bugs de mon application. 
+
+### Objectifs réalisés
+J'ai bien avancé mon rapport de stage, je suis content. J'ai également pu fix les derniers bugs de mon application. A partir de demain, ce sera de la Doc à 100% ! :)
+
+## [25.05.2023]
+### Objectifs
+Aujourd'hui je vais faire de la documentation <ins> ***toute***</ins> la journée, YOUPIII 😁! Je suis impatient de commencer dès ce matin ( ≧Д≦)" ! Je me dépèche d'ailleurs particulièrement, car <ins> ***J'ADORE***</ins> la documentation. 
