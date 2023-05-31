@@ -90,3 +90,13 @@ J'ai bien avancé mon rapport de stage, je suis content. J'ai également pu fix 
 ## [25.05.2023]
 ### Objectifs
 Aujourd'hui je vais faire de la documentation <ins> ***toute***</ins> la journée, YOUPIII 😁! Je suis impatient de commencer dès ce matin ( ≧Д≦)" ! Je me dépèche d'ailleurs particulièrement, car <ins> ***J'ADORE***</ins> la documentation. 
+
+### Objectifs réalisés
+J'ai bien avancé ma documentation(tests,backlog, généralités, etc) et je suis content de ma journée. 
+
+## [31.05.2023]
+### Objectifs
+Aujourd'hui je compte améliorer un maximum ma documentation(continuer les tests par exemple) ainsi que commencer le manuel utilisateur. 
+### Objectifs réalisés
+J'ai bien avancé ma doc, toutefois je n'ai malheureusement pas pu faire mon manuel utilisateur. J'ai toutefois très bien avancé et je suis content :)
+
