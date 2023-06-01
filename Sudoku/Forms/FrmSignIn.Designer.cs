@@ -132,6 +132,8 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FrmSignIn";
+            this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sign in";
             this.ResumeLayout(false);
             this.PerformLayout();

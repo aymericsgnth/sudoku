@@ -150,9 +150,12 @@
             this.Controls.Add(this.tbxPseudo);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblTitle);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FrmSignUpOrUpdateData";
+            this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sign up";
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -100,3 +100,8 @@ Aujourd'hui je compte améliorer un maximum ma documentation(continuer les tests
 ### Objectifs réalisés
 J'ai bien avancé ma doc, toutefois je n'ai malheureusement pas pu faire mon manuel utilisateur. J'ai toutefois très bien avancé et je suis content :)
 
+## [01.06.2023]
+### Objectifs
+Comme les jours précédents, j'ai prévu d'avancer un maximum ma documentation et de commencer mon journal de bord
+
+

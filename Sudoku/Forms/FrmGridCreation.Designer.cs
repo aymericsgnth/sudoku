@@ -112,6 +112,8 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FrmGridCreation";
+            this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Create a grid";
             this.ResumeLayout(false);
             this.PerformLayout();

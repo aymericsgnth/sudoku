@@ -1,8 +1,10 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Sudoku"
+    "\\Documentation",
+    "\\Sudoku",
+    "\\Sudoku\\Forms"
   ],
-  "SelectedNode": "\\Sudoku\\Form1.cs",
+  "SelectedNode": "\\Sudoku.sln",
   "PreviewInSolutionExplorer": false
 }

@@ -28,18 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.userCtrlGridPreview = new Sudoku.GridView();
             this.lblError = new System.Windows.Forms.Label();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnDone = new System.Windows.Forms.Button();
+            this.userCtrlGridPreview = new Sudoku.GridView();
             this.SuspendLayout();
-            // 
-            // userCtrlGridPreview
-            // 
-            this.userCtrlGridPreview.Location = new System.Drawing.Point(-3, -1);
-            this.userCtrlGridPreview.Name = "userCtrlGridPreview";
-            this.userCtrlGridPreview.Size = new System.Drawing.Size(637, 649);
-            this.userCtrlGridPreview.TabIndex = 0;
             // 
             // lblError
             // 
@@ -73,6 +66,13 @@
             this.btnDone.Text = "Done !";
             this.btnDone.UseVisualStyleBackColor = true;
             // 
+            // userCtrlGridPreview
+            // 
+            this.userCtrlGridPreview.Location = new System.Drawing.Point(-3, -1);
+            this.userCtrlGridPreview.Name = "userCtrlGridPreview";
+            this.userCtrlGridPreview.Size = new System.Drawing.Size(637, 649);
+            this.userCtrlGridPreview.TabIndex = 0;
+            // 
             // FrmGame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -86,6 +86,8 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FrmGame";
+            this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Play game !";
             this.ResumeLayout(false);
             this.PerformLayout();
